@@ -42,7 +42,8 @@ console.log(tyro.roar("RAWERSRARARWERSARARARRRR!"));
 
 // ==== Arrays ====
 
-// Given an array of college graduates.  Complete the following requests using any array method you like
+// Given an array of college graduates.  
+// Complete the following requests using any array method you like
 
 const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern State College","email":"ctorry0@macromedia.com"},
 {"id":2,"first_name":"Saundra","university":"The School of the Art Institute of Chicago","email":"swhal1@state.gov"},
@@ -55,11 +56,18 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 {"id":9,"first_name":"Michail","university":"Universidad Católica de Ávila","email":"mrome8@shinystat.com"},
 {"id":10,"first_name":"Hube","university":"Universitat Rovira I Virgili Tarragona","email":"hlethbrig9@foxnews.com"}]
 
-/* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
+/* Request 1: Create a new array called universities 
+that contains all the universities in the graduates array.  
 
-Once you have the new array created, sort the universities alphabetically and log the result. */
+Once you have the new array created, 
+sort the universities alphabetically and log the result. */
+
 const universities = [];
-console.log(universities)
+for (let i = 0; i < graduates.length; i++){
+	universities.push(graduates[i].university);
+}
+universities.sort();
+console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
