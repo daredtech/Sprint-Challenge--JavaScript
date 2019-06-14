@@ -11,7 +11,6 @@ function consume(param1, param2, cb){
   return cb(param1, param2);
 }
 
-
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
@@ -35,21 +34,22 @@ console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to
 
 
 // ==== Closures ==== 
-
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
 
+// nestedfunction() is a closure (inner function) 
+// and it is allowed to use variables declared in parent function myFunction()
 
-// const external = "I'm outside the function";
+const external = "I'm outside the function";
 
-// function myFunction() {
-//   console.log(external);
-//   const internal = "Hello! I'm inside myFunction!";
+function myFunction() {
+  console.log(external);
+  const internal = "Hello! I'm inside myFunction!";
 
-//   function nestedFunction() {
-//     console.log(internal);
-//   };
-//   nestedFunction();
-// }
-//myFunction();
+  function nestedFunction() {
+    console.log(internal);
+  };
+  nestedFunction();
+}
+myFunction();
